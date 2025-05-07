@@ -4,7 +4,7 @@ require("dotenv").config();
 
 module.exports = {
   development: {
-    username: process.env.DB_USERNAME || "root",
+    username: process.env.DB_USER || "root",
     password: process.env.DB_PASSWORD || "passwordsql123",
     database: process.env.DB_NAME || "ecommerce_shoes",
     host: process.env.DB_HOST || "localhost", // You need to update this to your Railway DB host
@@ -12,10 +12,10 @@ module.exports = {
     port: 3307,
   },
   test: {
-    username: "root",
-    password: null,
-    database: "database_test",
-    host: "127.0.0.1",
+    username: process.env.DB_USER || "root",
+    password: process.env.DB_PASSWORD || "passwordsql123",
+    database: process.env.DB_NAME || "ecommerce_shoes",
+    host: process.env.DB_HOST || "localhost",
     dialect: "mysql",
   },
   production: {
