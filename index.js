@@ -7,7 +7,11 @@ const cookieParser = require("cookie-parser");
 
 app.use(
   cors({
-    origin: "https://whimsical-travesseiro-743409.netlify.app/", // your frontend URL
+    origin: [
+      "https://whimsical-travesseiro-743409.netlify.app",
+      "http://localhost:4173",
+      "http://localhost:5173",
+    ], // your frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true, // allow cookies to be sent
   })
