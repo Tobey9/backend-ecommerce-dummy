@@ -14,7 +14,7 @@ const seedAllProducts = async () => {
     // Destroy existing products (this clears all records)
     await Product.destroy({
       where: {},
-      truncate: true, // This also resets the auto-increment counter
+      force: true, // This also resets the auto-increment counter
     });
     console.log("Existing products deleted!");
 
