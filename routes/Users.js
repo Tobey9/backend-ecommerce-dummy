@@ -42,7 +42,7 @@ router.post("/register", async (req, res) => {
     res.cookie("accessToken", accessToken, {
       httpOnly: true, // Ensures JavaScript cannot access the cookie
       secure: process.env.NODE_ENV === "production", // Set to true in production for HTTPS
-      sameSite: "Lax", // Helps prevent CSRF attacks
+      sameSite: "None", // Helps prevent CSRF attacks
       maxAge: 3600000,
     });
 
@@ -78,7 +78,7 @@ router.post("/login", async (req, res) => {
     res.cookie("accessToken", accessToken, {
       httpOnly: true, // Ensures JavaScript cannot access the cookie
       secure: process.env.NODE_ENV === "production", // Set to true in production for HTTPS
-      sameSite: "Lax", // Helps prevent CSRF attacks
+      sameSite: "None", // Helps prevent CSRF attacks
       maxAge: 3600000,
     });
 
