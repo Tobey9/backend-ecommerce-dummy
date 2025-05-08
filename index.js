@@ -5,6 +5,8 @@ const { sequelize } = require("./models");
 const PORT = 3000;
 const cookieParser = require("cookie-parser");
 
+app.use(cookieParser());
+
 app.use(
   cors({
     origin: [
@@ -17,7 +19,6 @@ app.use(
   })
 );
 app.use(express.json());
-app.use(cookieParser());
 
 const productRouter = require("./routes/Products");
 app.use("/products", productRouter);
